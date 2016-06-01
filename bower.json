@@ -1,0 +1,23 @@
+{
+  "name": "angular-intro-tdd",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Alex Robertson <lex1989@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/OMGDuke/angular-intro-tdd",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.6"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.5.6"
+  }
+}
