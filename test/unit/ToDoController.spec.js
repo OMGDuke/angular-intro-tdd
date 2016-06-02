@@ -28,9 +28,7 @@ describe('ToDoController', function() {
 
   it('removes the last todo', function() {
     var initialCount = ctrl.todos.length;
-
     ctrl.removeToDo();
-
     expect(ctrl.todos.length).toEqual(initialCount - 1);
   });
 });

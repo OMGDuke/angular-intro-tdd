@@ -6,12 +6,12 @@ describe('Todos tracker', function() {
       request: {
         path: 'http://quiet-beach-24792.herokuapp.com/todos.json',
       method: 'GET'
-    },
-    response: {
-      data: [{text: "ToDo1", completed: true}, {text: "ToDo2", completed: false}]
-    }
-  }]);
-});
+      },
+      response: {
+        data: [{text: "ToDo1", completed: true}, {text: "ToDo2", completed: false}]
+      }
+    }]);
+  });
 
   it('has several ToDos', function() {
     browser.get('/');
@@ -46,6 +46,14 @@ describe('Todos tracker', function() {
     browser.get('/');
     var todoCount = $$('#todo-count');
     expect(todoCount.getText()).toMatch("2 remaining");
+  });
+
+  it('can be filtered to show completed tasks', function() {
+    browser.get('/');
+    var todos = $$('#todos p');
+    // $("button.complete-filter").click();
+    element(by.cssContainingText('option', 'Complete')).click();
+    expect(todos.getText()).not.toMatch("not completed");
   });
 
   afterEach(function() {
